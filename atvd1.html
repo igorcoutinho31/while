@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while/while</title>
+</head>
+
+<body>
+    <script>
+        let condicao, operador, n1, n2;
+        condicao = prompt("Digite S para utilizar a calculadora")
+        while (condicao == "s" || condicao == "S") {
+            operador = prompt("Digite o operador matemático: " +
+                "\n +. adicao" +
+                "\n -. subtracao" +
+                "\n *. multiplicacao" + 
+                "\n /. divisao" +
+                "\n %. resto da divisão" 
+            )
+            n1 = parseFloat(prompt("Digite o primeiro número: "));
+            n2 = parseFloat(prompt("Digite o segundo número: "));
+            while (operador == "+") {
+                alert(n1 + n2);
+                operador = "";
+            }
+            while (operador == "-") {
+                alert(n1 - n2);
+                operador = "";
+            }
+            while (operador == "*") {
+                alert(n1 * n2);
+                operador = "";
+            }
+            while (operador == "/") {
+                alert(n1 / n2);
+                operador = "";
+            }
+            while (operador == "%") {
+                alert(n1 % n2);
+                operador = "";
+            }
+            condicao = prompt("Deseja continuar? (S/N)");
+        }
+    </script>
+
+
+</body>
+
+</html>
