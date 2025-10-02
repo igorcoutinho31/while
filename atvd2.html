@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ímpar ou Par</title>
+    <title>Ímpar ou Par do while</title>
 </head>
 
 <body>
@@ -13,13 +13,18 @@
         condicao = prompt("Digite S para verificar se um número é ímpar ou par");
         while (condicao == "s" || condicao == "S") {
             numero = parseInt(prompt("Digite um número: "));
-            if (numero % 2 == 0) {
-                alert("O número " + numero + " é par.");
-            } else {
-                alert("O número " + numero + " é ímpar.");
+            do {
+                while (isNaN(numero)) {
+                    numero = parseInt(prompt("Valor inválido. Digite um número válido: "));
+                }
+                if (numero % 2 === 0) {
+                    alert("O número " + numero + " é par.");
+                } else {
+                    alert("O número " + numero + " é ímpar.");
             }
             condicao = prompt("Deseja verificar outro número? (S/N)");
-        }
+        } while (condicao != "s" && condicao != "S" && condicao != "n" && condicao != "N");
+    }
     </script>
 </body>
 

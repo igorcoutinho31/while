@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada</title>
+    <title>Tabuada do while</title>
 </head>
+
 <body>
     <script>
-        let numero, condicao, resultado;
+        let numero, condicao;
         condicao = prompt("Digite S para ver a tabuada de um número");
         while (condicao == "s" || condicao == "S") {
-            numero = parseInt(prompt("Digite um número: "));
-            resultado = "";
-            for (let i = 1; i <= 10; i++) {
-                resultado += numero + " x " + i + " = " + (numero * i) + "\n";
-            }
-            alert(resultado);
-            condicao = prompt("Deseja ver a tabuada de outro número? (S/N)");
+            numero = parseInt(prompt("Digite um número para ver sua tabuada: "));
+            do {
+                while (isNaN(numero)) {
+                    numero = parseInt(prompt("Valor inválido. Digite um número válido: "));
+                }
+                let resultado = "Tabuada do " + numero + ":\n";
+                for (let i = 1; i <= 10; i++) {
+                    resultado += numero + " x " + i + " = " + (numero * i) + "\n";
+                }
+                alert(resultado);
+                condicao = prompt("Deseja ver a tabuada de outro número? (S/N)");
+            } while (condicao != "s" && condicao != "S" && condicao != "n" && condicao != "N");
         }
+
     </script>
 </body>
+
 </html>

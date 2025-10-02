@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fibonacci</title>
+    <title>Fibonacci do while</title>
 </head>
 <body>
     <script>
-        let contador, proximo, anterior, resposta;
-        resposta = "s";
+        let contador, proximo, anterior;
 
+        do {
+            contador = parseInt(prompt("Digite a quantidade de números da sequência de Fibonacci que deseja gerar:"));
+        } while (isNaN(contador) || contador <= 0);   
+        let resposta = "s";
         while (resposta == "s" || resposta == "S") {
             anterior = 0;
-            atual = 1;
-            contador = parseInt(prompt("Quantos números fibonacci deseja gerar? "));
-            alert(atual);
-            for (let i = 2; i < contador; i++) {
-                proximo = anterior + atual;
-                alert(proximo);
-                anterior = atual;
-                atual = proximo;
+            proximo = 1;
+            let resultado = "Sequência de Fibonacci:\n";
+            for (let i = 1; i <= contador; i++) {
+                resultado += anterior + (i < contador ? ", " : "");
+                let temp = anterior;
+                anterior = proximo;
+                proximo = temp + proximo;
             }
-            resposta = prompt("Deseja gerar mais números? (S/N)");
+            alert(resultado);
+            resposta = prompt("Deseja gerar outra sequência? (S/N)");
         }
     </script>
 </body>
